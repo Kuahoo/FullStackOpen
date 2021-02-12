@@ -1,0 +1,2 @@
+Browser----->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Server----->Browser: returns HTTP/2 201 Created. content-type: application/json; charset=ut-8

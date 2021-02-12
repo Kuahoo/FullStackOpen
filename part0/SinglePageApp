@@ -1,0 +1,31 @@
+Browser----->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server----->Browser: HTML code. content-type: text/html
+
+note over browser:
+browser starts executing html code and requests css rules and spa.js script
+end note
+
+Browser----->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Browser----->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server----->Browser: CSS file. content-type: text/css
+Server----->Browser: Javascript code. content-type: application/javascript
+
+note over browser:
+browser starts executing javascript code and follows css.
+Then requests json data from server.
+end note
+
+Browser----->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server----->Browser: data.json file content-type:application/json
+
+note over browser:
+browser executes event handler and renders the notes to display
+browser also requests favicon for icons? from server
+end note
+
+Browser----->Server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+Server----->Browser: favicon.ico content-type:text/html
+
+note over browser:
+browser executes and loads the icons?
+end note
