@@ -14,7 +14,7 @@ const Header = (props) => {
 const Part = (props) => {
     return (
         <div>
-            <p>
+            <p key="{props.part.name}">
                 {props.part.name} {props.part.exercises}
             </p>
         </div>
@@ -23,10 +23,10 @@ const Part = (props) => {
 
 const Content = ({partsArray}) => {
     const renderedContent = partsArray.map((partObject) => 
-        <Part part={partObject}/>
+            <Part key={partObject.name} part={partObject}/>
         );
     return (
-        <div>
+        <div >
             {renderedContent} 
         </div>
     )
@@ -36,7 +36,6 @@ const Total = ({partsArray}) => {
     let exercisesList = partsArray.map((partObject) => 
        partObject.exercises 
     );
-    console.log(exercisesList)
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
     const initialValue = 0;
     let sum = exercisesList.reduce(reducer, initialValue);
